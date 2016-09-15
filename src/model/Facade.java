@@ -10,18 +10,18 @@ import java.util.logging.Logger;
 /**
  * Created by Marcin on 2015-11-04.
  */
-public class Fasade implements IDBrepo {
-    private static Logger logger = Logger.getLogger(Fasade.class.getName());
+public class Facade implements IDBrepo {
+    private static Logger logger = Logger.getLogger(Facade.class.getName());
 
-    private static volatile Fasade instance = null;
+    private static volatile Facade instance = null;
     //private static DBrepo dBrepo = null;
 
-    public static Fasade getInstance() {
+    public static Facade getInstance() {
         if (instance == null) {
-            synchronized (Fasade.class) {
+            synchronized (Facade.class) {
                 if (instance == null) {
                     logger.info("Tworze instancje KsiazkiTelefonicznej");
-                    instance = new Fasade();
+                    instance = new Facade();
                 }
             }
         }
@@ -31,7 +31,7 @@ public class Fasade implements IDBrepo {
     /**
      * Konstruktor.
      */
-    private Fasade() {
+    private Facade() {
     }
 
     /**
@@ -62,7 +62,7 @@ public class Fasade implements IDBrepo {
     /**
      * Metoda obslugujaca zapisywanie studenta do obu BD implementowana z interfejsu
      * @see IDBrepo
-     * @param student
+     * @param Student student
      */
     @Override
     public void putStudentToDB(Student student) {

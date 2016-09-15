@@ -4,16 +4,14 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.control.Button;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
-import model.Fasade;
+import model.Facade;
 import model.Student;
 import model.StudentFirst;
 import model.StudentSecond;
-
 
 import javax.swing.*;
 import java.net.URL;
@@ -25,7 +23,7 @@ public class Controller implements Initializable {
     private static Logger logger = Logger.getLogger(Controller.class.getName());
 
     ///"slabe" ladowanie modelu na sztywno. Brak konstr.
-    private Fasade model = Fasade.getInstance();
+    private Facade model = Facade.getInstance();
     //View mam bezposrednio z fxmla.
 
     ArrayList<Student> students = new ArrayList<>();
